@@ -8,6 +8,7 @@ A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen
 ###Release Notes:
 ####v1.0
 - release date:
+
 #####Features
 - Set play-space color
 - Choose between RGB for play-space
@@ -16,6 +17,7 @@ ______________________________
 
 ####v1.1
 - release date:
+
 #####New Features:
 - Added 4 colors (orange, purple, yellow, white)
 - Updated interface to 7 buttons
