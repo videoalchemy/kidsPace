@@ -7,16 +7,17 @@ A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen
 
 ###Specification By Example:
 ####Feature: Control play-space color
-- **Scenario:** Kid changes the room color to red
+- **Scenario:** Kid changes the room color to red  
 > A child can change a room's color to either R, G, or B by selecting from the 3 buttons colored  R, G, B on the first and only screen of the handheld interface.  
-> **Given** the kids has the controller and wants to change the room's color
-**When** the child touches the RED button
-**Then** the room should turn red
-**And** the room should remain red until another color is chosen 
+> **Given** the kids has the controller and wants to change the room's color  
+**When** the child touches the RED button  
+**Then** the room should turn red  
+**And** the room should remain red until another color is chosen   
 
 
 ###Release Notes:
 
+________________________________________
 
 ###Process Prototypes:
 This project is also an investigation into the software development process.  What are the 'best practices'?  Best way to document?  To track features?  To track releases?  To track bugs?  To log changes? To evolve software?  I've worked with two dev teams on two enterprise level software projects and in both cases, we were forced by breakdown and failure to invent and deploy reliable processes and procedures. Doing so was challenge. Retrofitting processes to full blown projects is just as difficult as changing the dev team culture:  so much inertial.  A small solo-project, however, is ideal for test-driving process prototypyes.      
