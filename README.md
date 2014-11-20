@@ -6,7 +6,8 @@ __________________________
 A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen in hand, Kids change the color of their surroundings by affecting the output of a ceiling mounted projector.     
 
 ###Release Notes:
-####v1.0 - 2014-11-19
+####v1.0
+- Release Date:  2014-11-19
 
 #####Features:
 - repo exists on github
@@ -15,7 +16,8 @@ A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen
 
 __________________________________
 
-####v1.1 - TBD
+####v1.1
+- Release Date: TBD
 
 #####New Features:
 - Set play-space color
@@ -24,7 +26,8 @@ __________________________________
 
 ______________________________
 
-####v1.1 - TBD:
+####v1.2:
+- Release Date: TBD
 
 #####New Features:
 - Added 4 colors (orange, purple, yellow, white)
