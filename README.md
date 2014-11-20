@@ -5,17 +5,38 @@ __________________________
 ###Overview
 A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen in hand, Kids change the color of their surroundings by affecting the output of a ceiling mounted projector.     
 
-###Specification By Example:
+###Release Notes:
+####v1.0
+- release date:
+#####Features
+- Set play-space color
+- Choose between RGB for play-space
+
+______________________________
+
+####v1.1
+- release date:
+#####New Features:
+- Added 4 colors (orange, purple, yellow, white)
+- Updated interface to 7 buttons
+
+#####Fixes:
+- removed strobe effect that occured when changing between colors
+
+_________________________________
+
+###v1.0 - Feature Specs by Example:
 ####Feature: Control play-space color
 - **Scenario:** Kid changes the room color to red  
->
+
 A child can change a room's color to either R, G, or B by selecting from the 3 buttons colored  R, G, B on the first and only screen of the handheld interface.  
->>
+
 **Given** the kids has the controller and wants to change the room's color  
 **When** the child touches the RED button  
 **Then** the room should turn red  
 **And** the room should remain red until another color is chosen   
 
+_______________________________________
 
 ###Release Notes:
 
