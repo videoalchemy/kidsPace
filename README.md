@@ -8,9 +8,9 @@ A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen
 ###Specification By Example:
 ####Feature: Control play-space color
 - **Scenario:** Kid changes the room color to red  
-
+>
 A child can change a room's color to either R, G, or B by selecting from the 3 buttons colored  R, G, B on the first and only screen of the handheld interface.  
-
+>>
 **Given** the kids has the controller and wants to change the room's color  
 **When** the child touches the RED button  
 **Then** the room should turn red  
