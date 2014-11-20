@@ -3,9 +3,16 @@
 __________________________
 
 ###Overview
-
+A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen in hand, Kids change the color of their surroundings by affecting the output of a ceiling mounted projector.     
 
 ###Specification By Example:
+####Feature: Control play-space color
+- **Scenario:** Kid changes the room color to red
+> A child can change a room's color to either R, G, or B by selecting from the 3 buttons colored  R, G, B on the first and only screen of the handheld interface.  
+> **Given** the kids has the controller and wants to change the room's color
+**When** the child touches the RED button
+**Then** the room should turn red
+**And** the room should remain red until another color is chosen 
 
 
 ###Release Notes:
@@ -20,6 +27,7 @@ This project is also an investigation into the software development process.  Wh
 #####specification by example (aka Executable Specs)
 
 #####Behavior Driven Development
+Start with a failing customer acceptance test that describes the behavior of the system from the customer's point of view.  Write this acceptance test in the form of an example of the way we want the system to behave in particular scenearios.  This will enable me to visualize the system before building it. (source: Cucumber - BDD for Testers and Developers by by Wayne and Hellesoy)
 
 #####Docs
 
