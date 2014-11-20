@@ -12,12 +12,22 @@ A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen
 #####Features:
 - repo exists on github
 - README describes basic release process
-- git tag marks this release
+- git tag 'v1.0' marks this release
 
 __________________________________
 
 ####v1.1
 - Release Date: TBD
+
+#####New Features:
+- Processing sketch exists for the code
+- git tag 'v1.1' marks this release
+
+___________________________________
+
+####v1.2
+- Release Date: TBD
+- git tag = v1.2
 
 #####New Features:
 - Set play-space color
@@ -26,7 +36,7 @@ __________________________________
 
 ______________________________
 
-####v1.2:
+####v1.3:
 - Release Date: TBD
 
 #####New Features:
