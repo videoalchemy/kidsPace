@@ -5,86 +5,10 @@ __________________________
 ###Overview
 A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen in hand, Kids change the color of their surroundings by affecting the output of a ceiling mounted projector.     
 
-###Release Notes:
-####v0.1.0
-- Release Date:  2014-11-19
-
-#####Features:
-- repo exists on github
-- README describes basic release process
-
-__________________________________
-
-####v0.2.0
-- Release Date: 2014-11-19
-
-#####Features:
-- Processing sketch exists for the code
-- started using git tags and git release versions
-    + still creating naming conventions
-
-___________________________________
-
-####v0.3.0
-- Release Date: 2014-11-20
-
-#####Features:
-- Set projection color to R, G, or B
-- Keyboard controls for R,G,and B
-- implemented [SemVer] - semantic versioning
-    + **x.y.z**  - Major.Minor.Patch
-- updated previous release version numbers
-- installed sublime plugin for markdown
-
-______________________________
-
-####v1.0.0
-- Release Date: TBD
-
-#####Features:
-- iPhone touchOSC controls for RGB
-- added iPhone touchOSC config file to the repo
-
-_____________________________
-
-####v1.1.0
-- Release Date: TBD
-
-#####Features:
-- iPad touchOSC controls for RGB
-- added iPad touchOSC config to repo
-
-____________________________
-
-####v1.2.0
-- Release Date: TBD
-
-#####Features:
-- Added 3 colors (orange, purple, yellow)
-- added keyboard control for new colors
 
 _________________________________
 
-####v1.3.0
-- Release Date: TBD
-
-#####Features:
-- iPHone controller has more buttons for new colors
-
-_________________________________
-
-####v1.4.0
-- Release Date: TBD
-
-#####Features:
-- iPad controller has 3 more buttons for new colors
-
-
-
-
-_________________________________
-
-###v1.1 - Feature Specs by Example:
+###v1.0.0 - Feature Specs by Example:
 
 ####Feature: Control play-space color
 
