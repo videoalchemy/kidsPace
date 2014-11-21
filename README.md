@@ -6,45 +6,81 @@ __________________________
 A KidsPace is a play-space with Kid controlled illuminatation.  With touchscreen in hand, Kids change the color of their surroundings by affecting the output of a ceiling mounted projector.     
 
 ###Release Notes:
-####v1.0
+####v0.1.0
 - Release Date:  2014-11-19
 
 #####Features:
 - repo exists on github
 - README describes basic release process
-- git tag 'v1.0' marks this release
 
 __________________________________
 
-####v1.1
-- Release Date: TBD
+####v0.2.0
+- Release Date: 2014-11-19
 
-#####New Features:
+#####Features:
 - Processing sketch exists for the code
-- git tag 'v1.1' marks this release
+- started using git tags and git release versions
+    + still creating naming conventions
 
 ___________________________________
 
-####v1.2
-- Release Date: TBD
-- git tag = v1.2
+####v0.3.0
+- Release Date: 2014-11-20
 
-#####New Features:
-- Set play-space color
-- touchscreen interface
-- Choose between RGB for play-space
+#####Features:
+- Set projection color to R, G, or B
+- Keyboard controls for R,G,and B
+- implemented [SemVer] - semantic versioning
+    + **x.y.z**  - Major.Minor.Patch
+- updated previous release version numbers
+- installed sublime plugin for markdown
 
 ______________________________
 
-####v1.3:
+####v1.0.0
 - Release Date: TBD
 
-#####New Features:
-- Added 4 colors (orange, purple, yellow, white)
-- Updated interface to 7 buttons
+#####Features:
+- iPhone touchOSC controls for RGB
+- added iPhone touchOSC config file to the repo
 
-#####Fixes:
-- removed strobe effect that occured when changing between colors
+_____________________________
+
+####v1.1.0
+- Release Date: TBD
+
+#####Features:
+- iPad touchOSC controls for RGB
+- added iPad touchOSC config to repo
+
+____________________________
+
+####v1.2.0
+- Release Date: TBD
+
+#####Features:
+- Added 3 colors (orange, purple, yellow)
+- added keyboard control for new colors
+
+_________________________________
+
+####v1.3.0
+- Release Date: TBD
+
+#####Features:
+- iPHone controller has more buttons for new colors
+
+_________________________________
+
+####v1.4.0
+- Release Date: TBD
+
+#####Features:
+- iPad controller has 3 more buttons for new colors
+
+
+
 
 _________________________________
 
@@ -61,9 +97,6 @@ A child can change a room's color to either R, G, or B by selecting from the 3 b
 **Then** the room should turn red  
 **And** the room should remain red until another color is chosen   
 
-_______________________________________
-
-###Release Notes:
 
 ________________________________________
 
@@ -79,5 +112,10 @@ This project is also an investigation into the software development process.  Wh
 Start with a failing customer acceptance test that describes the behavior of the system from the customer's point of view.  Write this acceptance test in the form of an example of the way we want the system to behave in particular scenearios.  This will enable me to visualize the system before building it. (source: Cucumber - BDD for Testers and Developers by by Wayne and Hellesoy)
 
 #####Docs
+
+
+____________________________
+
+[SemVer]:http://semver.org/
 
 
