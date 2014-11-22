@@ -19,6 +19,8 @@ _________________________________
 - shapes respond to real objects in the space
 - projection mapping to objects in the space
 - physical interaction with projection mapped objects
+
+
 _________________________________
 
  
