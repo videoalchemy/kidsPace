@@ -3,7 +3,7 @@
 __________________________
 
 ###Overview
-KidsPace: a play-space illumination toy that lets kids play with the color of their surroundings.     
+KidsPace: a play-space illumination toy that lets kids play with the color of their surroundings.       
 
 _________________________________
 
