@@ -11,7 +11,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2921,
+				"buffer_size": 2159,
 				"line_ending": "Unix"
 			}
 		},
@@ -20,6 +20,14 @@
 			"settings":
 			{
 				"buffer_size": 95,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sketch_kidspace/sketch_kidspace.pde",
+			"settings":
+			{
+				"buffer_size": 606,
 				"line_ending": "Unix"
 			}
 		}
@@ -63,9 +71,11 @@
 	},
 	"console":
 	{
-		"height": 311.0,
+		"height": 138.0,
 		"history":
 		[
+			"git status",
+			"pwd",
 			"ls",
 			"pwd",
 			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
@@ -82,9 +92,7 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jay/videoalchemy",
-		"/Users/jay/videoalchemy/kidspace",
-		"/Users/jay/videoalchemy/kidspace/sketch_kidspace"
+		"/Users/jay/videoalchemy"
 	],
 	"file_history":
 	[
@@ -144,24 +152,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "README.md",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2921,
+						"buffer_size": 2159,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								359,
+								359
 							]
 						],
 						"settings":
@@ -170,6 +178,37 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 155.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "kidspace.sublime-project",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 95,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -185,12 +224,12 @@
 			"sheets":
 			[
 				{
-					"buffer": 1,
-					"file": "kidspace.sublime-project",
-					"semi_transient": true,
+					"buffer": 2,
+					"file": "sketch_kidspace/sketch_kidspace.pde",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 95,
+						"buffer_size": 606,
 						"regions":
 						{
 						},
@@ -206,7 +245,9 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -298,7 +339,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -306,7 +347,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 165.0,
+	"side_bar_width": 134.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
