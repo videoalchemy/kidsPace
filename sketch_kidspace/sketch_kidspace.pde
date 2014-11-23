@@ -8,6 +8,7 @@ color c;
 void setup() {
   size(1024, 768);  //standard project dimensions
   c = color(0, 0, 0);
+  background(c);
 }
 
 void draw() {
@@ -17,18 +18,20 @@ void draw() {
 
 void pickColor() {
   if (keyPressed) {
-    if (key == 'r') {
-      c = color(255, 0, 0);
-    } else if (key == 'g') {
-      c = color(0, 255, 0);
-    } else if (key == 'b') {
-      c = color(0, 0, 255);
-    } else {
-      c = color(0);
+    switch(key) {
+      case('r'):
+        c = color(255,0,0);
+        break;
+      case('g'):
+        c = color(0,255,0);
+        break;
+      case('b'):
+        c = color(0,0,255);
+        break;
     }
   }
 }
-
+  
 void projectColor() {
   fill(c);
   rect(0, 0, width, height);
