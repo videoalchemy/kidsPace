@@ -11,15 +11,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2159,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "kidspace.sublime-project",
-			"settings":
-			{
-				"buffer_size": 95,
+				"buffer_size": 2088,
 				"line_ending": "Unix"
 			}
 		},
@@ -27,23 +19,23 @@
 			"file": "sketch_kidspace/sketch_kidspace.pde",
 			"settings":
 			{
-				"buffer_size": 606,
+				"buffer_size": 1740,
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Packages/Ruby/Ruby.sublime-build",
+	"build_system": "Packages/Markdown Preview/Markdown.sublime-build",
 	"command_palette":
 	{
 		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"pac",
+				"pack",
 				"Package Control: Install Package"
 			],
 			[
-				"pack",
+				"pac",
 				"Package Control: Install Package"
 			],
 			[
@@ -92,10 +84,16 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jay/videoalchemy"
+		"/Users/jay/videoalchemy",
+		"/Users/jay/videoalchemy/kidspace"
 	],
 	"file_history":
 	[
+		"/Users/jay/videoalchemy/kidspace/README.html",
+		"/Users/jay/videoalchemy/kidspace/executable_specs.md",
+		"/Users/jay/videoalchemy/kidspace/executable_specs.html",
+		"/Users/jay/Library/Application Support/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/Users/jay/Library/Application Support/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
 		"/Users/jay/Library/Application Support/Sublime Text 3/Packages/User/Markdown.sublime-settings",
 		"/Users/jay/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/jay/Library/Application Support/Sublime Text 3/Packages/User/sftp_servers/web01",
@@ -152,7 +150,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -161,15 +159,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2159,
+						"buffer_size": 2088,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								359,
-								359
+								545,
+								546
 							]
 						],
 						"settings":
@@ -180,41 +178,10 @@
 							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 155.0,
+						"translation.y": 140.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "kidspace.sublime-project",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 95,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								95,
-								95
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -224,20 +191,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "sketch_kidspace/sketch_kidspace.pde",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 606,
+						"buffer_size": 1740,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								606,
+								606
 							]
 						],
 						"settings":
@@ -253,7 +220,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -305,6 +272,10 @@
 	{
 		"height": 0.0
 	},
+	"output.markdown":
+	{
+		"height": 94.0
+	},
 	"output.sftp":
 	{
 		"height": 94.0
@@ -328,6 +299,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/healthycities/hci.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
@@ -347,7 +322,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 134.0,
+	"side_bar_width": 151.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
