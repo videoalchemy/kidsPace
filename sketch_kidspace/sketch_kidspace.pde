@@ -15,7 +15,7 @@ boolean buttonState = false;
 
 
 void setup() {
-  size(1024, 768);  //standard project dimensions
+  size(1600, 900);  //standard project dimensions
   c = color(0, 0, 0);
   background(c);
   /* start oscP5, listening for incoming messages at port 12000 */
