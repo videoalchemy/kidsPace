@@ -1,11 +1,7 @@
 ##KidsPace
-> You know, for kids!  Responsive visuals for a child's play space
+> You know, for kids!  Responsive projection mapping for a child's play space
 __________________________
 
-###Overview
-KidsPace: a play-space illumination toy that lets kids play with the color of their surroundings.       
-
-_________________________________
 
 ###Feature List
 #####v1.0.0
