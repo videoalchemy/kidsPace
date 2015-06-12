@@ -70,6 +70,31 @@ ________________________________________
 - [openFrameworks for Processing users]
 - [Steps to your first particle system in oF]
 - [oF tutorials]
+- [of video tutorial series by Lewis Lepton]
+- [using the project generator]
+- [using oF in Xcode]
+- [oF libraries]
+
+
+##oF notes
+###Project folder heirarchy - Apps and Examples
+- examples folder located at root is for my projects and examples
+- projects in ```apps/``` need to be 2 levels deep, eg
+```
+# this works (2 levels)
+apps/
+    kinectApps/
+        /kidsPace
+        /hotWheelTracker
+    dashboardApps/
+        /releaseDash
+        /taskDash
+
+# this doesn't (1 leve)
+apps/
+    /kidsPace
+```
+
 
 ________________________
 
@@ -103,3 +128,7 @@ ____________________________
 [openFrameworks for Processing users]:http://openframeworks.cc/tutorials/first%20steps/002_openFrameworks_for_processing_users.html
 [Steps to your first particle system in oF]:http://openframeworks.cc/tutorials/first%20steps/001_My_first_particle_system.html
 [oF tutorials]:http://openframeworks.cc/tutorials/
+[of video tutorial series by Lewis Lepton]:https://youtu.be/IKSTo_0pB28?list=PL4neAtv21WOmrV8z9rSzL20QpdLU1zJLr
+[using the project generator]:https://github.com/openframeworks/openFrameworks/blob/master/docs/projectgenerator.md
+[using oF in Xcode]:https://github.com/openframeworks/openFrameworks/blob/master/docs/osx.md
+[oF libraries]:https://github.com/openframeworks/openFrameworks/blob/master/docs/libraries.md
