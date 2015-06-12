@@ -95,6 +95,10 @@ apps/
     /kidsPace
 ```
 
+###path to generating project
+```
+openframeworks/apps/devapps/projectgenerator/projectgenerator.xcodeproj
+```
 
 ________________________
 
