@@ -15,6 +15,7 @@ __________________________
 
 
 ###Future Features
++ control the flow of water down from a wall across the floor
 - touchscreen control (iPad and iPhone)
 - create and control virtual shapes
 - virtual shapes move autonomously
