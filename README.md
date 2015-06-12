@@ -2,10 +2,17 @@
 > You know, for kids!  Responsive projection mapping for a child's play space
 __________________________
 
+###dev tasks
+- [ ] install oF
+- [ ] couple oF tutorials 
+- [ ] read the oF for Processing tutorials writeup
 
-###Feature List
-#####v1.0.0
-- control R,G,B of space using keyboard
+###Features
+####v1.0.0
+- converts and aligns 3D world point as viewed by Kinect to a pixel point projected into kidSpace
+- projects silhouette of moving objects
+- removes background
+
 
 ###Future Features
 - touchscreen control (iPad and iPhone)
@@ -25,76 +32,62 @@ __________________________
 
 _________________________________
 
-###[Executable Specs]
- 
+###oF Dependencies
+- [ofxKinectProjectorToolkit]
+    + addon for calibrating a projector to a Kinect, allowing for automated projection mapping aligned to the Kinect.
+- [ofxOpenNI]
+    + The ofxOpenNI module is a wrapper for the openNI + NITE + SensorKinect libraries/middleware for openFrameworks.
+- [ofxCv]
+    + ofxCv represents an alternative approach to wrapping OpenCV for openFrameworks.
+- [ofxSecondWindow]
+    + This is a simple openFrameworks addon which allows for creating multiple windows.
+
+____________________________
+
+##Main Components
+###Calibration
+###Mapping
++ The key function for mapping is getProjectedPoint(ofVec3f worldPoint). This function takes any 3d world point from the Kinect and converts it to a pixel point. For example, using ofxKinect, the pixel point associated with the world point inside the depth image at (x, y) is found:
+```
+ofVec3f worldPoint = kinect.getWorldCoordinateAt(x, y);
+ofVec2f projectorPoint = kpt.getProjectedPoint(worldPoint);
+```
+Using ofxOpenNi, the world point is acquired slightly differently, directly from the raw depth pixels.
+```
+ofShortPixels depthPixels = kinect.getDepthRawPixels();
+ofPoint depthPoint = ofPoint(x, y, depthPixels[x +y * kinect.getWidth()]);
+ofVec3f worldPoint = kinect.projectiveToWorld(depthPoint);
+ofVec2f projectedPoint = kpt.getProjectedPoint(worldPoint);
+```
+
+###Projections
+###Physics 
 
 
 ________________________________________
+###Tutorials & Examples
+- [openFrameworks for Processing users]
+- [Steps to your first particle system in oF]
+- [oF tutorials]
 
-###Process Prototypes:
-This project is also an investigation into the software development process.  What are the 'best practices'?  Best way to document?  To track features?  To track releases?  To track bugs?  To log changes? To evolve software?  I've worked with two dev teams on two enterprise level software projects and in both cases, we were forced by breakdown and failure to invent and deploy reliable processes and procedures. Doing so was challenge. Retrofitting processes to full blown projects is just as difficult as changing the dev team culture:  so much inertial.  A small solo-project, however, is ideal for test-driving process prototypyes.      
+________________________
 
-####Process Tools:
-#####git tags
-
-#####specification by example (aka Executable Specs)
-
-#####Behavior Driven Development
-Start with a failing customer acceptance test that describes the behavior of the system from the customer's point of view.  Write this acceptance test in the form of an example of the way we want the system to behave in particular scenearios.  This will enable me to visualize the system before building it. (source: Cucumber - BDD for Testers and Developers by by Wayne and Hellesoy)
-
-#####Cucumber  
-- Define:
-    + Cucumber is a tool based on Behavior Driven Development (BDD) framework which is used to write acceptance tests for web application. It allows automation of functional validation in easily readable and understandable format GHERKIN
-- Cucumber Feature Files:
-    + Feature files are essential part of cucumber which is used to write test automation steps or acceptance tests. This can be used as live document. The steps are the application specification. All the feature files ends with .feature extension.
-    + example Feature File:
+###git tags
 ```
-Feature:  Login Functionality Feature
-    
-    In order to ensure Login Fucntionality works,
-    I want to run cucumber tests to verify it is working
+# list tags
+git tag
 
-Scenario(#1): Login Functionality 
-    Given user navs to blah blah
-    When user logs in using blah
-    Then login shoud be successful
+# set tag
+git tag v1
 
-Scenario(#2): Login Functionality
-    Given : given specifics of the precondition
-    When: when some action is performed
-    Then:  expected outcome
-    Background: steps for precondition to other steps
-    And: used to combine two or more same type actions
-```
-- **FEATURE:**
-    + this gives info about the high level business functionality and the PURPOSE / INTENT
-- **SCENARIO Outline**
-    + used when same test has to be performed with different data set. 
-    + data listed gets passed in as a parameter in multiple instances
-    + test becomes PARAMATERIZED 
-    + example
-```
-Feature: Login 
-Scenario Outline:  Login functionality
-Given: user navs to site
-When: user logs in using un: \<username> and password \<password>
-Then: login should be successful
+# push tags
+git push --tags
 
-Examples:
-|username   |password   |
-|Tom        |password1  |
-|John       |passwrod2  |
+# checkout tag
+git checkout v1 (i think.  need to verify)
 ```
-- **TAGS**
-    + Cucumber by default runs all feature files
-    + Tags are what tell cucumber to run only certain tests
-    + example: 
-        * **@SmokeTest**
-    + example of using multiple tags simultaneously:
-        * **@SmokeTest @LoginTest**
-    + other example tages:
-        * **@positiveScenario**
-        * **@negativeScenario**
+
+
         
 
 
@@ -102,8 +95,10 @@ Examples:
 
 
 ____________________________
-
-[SemVer]:http://semver.org/
-[Executable Specs]:https://github.com/VideoAlchemy/kidspace/blob/master/executable_specs.md
-
-
+[ofxKinectProjectorToolkit]:https://github.com/genekogan/ofxKinectProjectorToolkit
+[ofxOpenNI]:https://github.com/gameoverhack/ofxOpenNI
+[ofxCv]:https://github.com/kylemcdonald/ofxCv
+[ofxSecondWindow]:https://github.com/genekogan/ofxSecondWindow
+[openFrameworks for Processing users]:http://openframeworks.cc/tutorials/first%20steps/002_openFrameworks_for_processing_users.html
+[Steps to your first particle system in oF]:http://openframeworks.cc/tutorials/first%20steps/001_My_first_particle_system.html
+[oF tutorials]:http://openframeworks.cc/tutorials/
