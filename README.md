@@ -1,5 +1,5 @@
 ## KidsPace
-> You know, for kids!  Responsive projection mapping for a child's play space
+> A play-space of responsive video projections. You know, for kids!
 __________________________
 
 ### dev tasks
