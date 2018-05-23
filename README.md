@@ -1,20 +1,20 @@
-##KidsPace
+## KidsPace
 > You know, for kids!  Responsive projection mapping for a child's play space
 __________________________
 
-###dev tasks
+### dev tasks
 - [ ] install oF
 - [ ] couple oF tutorials 
 - [ ] read the oF for Processing tutorials writeup
 
-###Features
-####v1.0.0
+### Features
+#### v1.0.0
 - converts and aligns 3D world point as viewed by Kinect to a pixel point projected into kidSpace
 - projects silhouette of moving objects
 - removes background
 
 
-###Future Features
+### Future Features
 + control the flow of water down from a wall across the floor
 - touchscreen control (iPad and iPhone)
 - create and control virtual shapes
@@ -33,7 +33,7 @@ __________________________
 
 _________________________________
 
-###oF Dependencies
+### oF Dependencies
 - [ofxKinectProjectorToolkit]
     + addon for calibrating a projector to a Kinect, allowing for automated projection mapping aligned to the Kinect.
 - [ofxOpenNI]
@@ -45,9 +45,9 @@ _________________________________
 
 ____________________________
 
-##Main Components
-###Calibration
-###Mapping
+## Main Components
+### Calibration
+### Mapping
 + The key function for mapping is getProjectedPoint(ofVec3f worldPoint). This function takes any 3d world point from the Kinect and converts it to a pixel point. For example, using ofxKinect, the pixel point associated with the world point inside the depth image at (x, y) is found:
 ```
 ofVec3f worldPoint = kinect.getWorldCoordinateAt(x, y);
@@ -61,12 +61,12 @@ ofVec3f worldPoint = kinect.projectiveToWorld(depthPoint);
 ofVec2f projectedPoint = kpt.getProjectedPoint(worldPoint);
 ```
 
-###Projections
-###Physics 
+### Projections
+### Physics 
 
 
 ________________________________________
-###Tutorials & Examples
+### Tutorials & Examples
 - [openFrameworks for Processing users]
 - [Steps to your first particle system in oF]
 - [oF tutorials]
@@ -76,8 +76,8 @@ ________________________________________
 - [oF libraries]
 
 
-##oF notes
-###Project folder heirarchy - Apps and Examples
+## oF notes
+### Project folder heirarchy - Apps and Examples
 - examples folder located at root is for my projects and examples
 - projects in ```apps/``` need to be 2 levels deep, eg
 ```
@@ -95,14 +95,14 @@ apps/
     /kidsPace
 ```
 
-###path to generating project
+### path to generating project
 ```
 openframeworks/apps/devapps/projectgenerator/projectgenerator.xcodeproj
 ```
 
 ________________________
 
-###git tags
+### git tags
 ```
 # list tags
 git tag
