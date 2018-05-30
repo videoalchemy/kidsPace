@@ -71,27 +71,31 @@ void drawFeedbackLayer() {
   updatePixels();
   baseLayer.updatePixels();
   imageMode(CENTER);
-  blendMode(BLEND);//BLEND
+  //blendMode(BLEND);//BLEND
 
   //image(baseLayer, location.y-(1/(location.y+1)), location.x, width*1.1, height);
   //image(baseLayer, mouse.y-(1/(mouse.y+1)), mouse.x, width*1.1, height);
-  //pushMatrix();
-  //translate(width/2, height/2);
+  pushMatrix();
+  
+  //translate(0, 0);
+  translate(mouseX, mouseY);
+
   //rotate(.0001*millis());
   //image(baseLayer, mouse.y-(1/(mouse.y+1)), mouse.x, width*(1.05), height-50);
   //blendMode(DIFFERENCE);//BLEND
   //image(baseLayer, mouseY-(1/(mouseY+1)), -mouseX, -width*1.1, height*1.1);
-  blendMode(DIFFERENCE);//BLEND
-  //image(baseLayer, width-mouseX-(1/(mouseY+1)), height-mouseY, width*(.8), height*(.9));
+  image(baseLayer, location.x, location.y, width*(.8), height*(.9));
   //image(img, location.x, location.y, img.width*(1+wAdjust)-50, img.height*(1+hAdjust)-50);
   image(img, location.x, location.y, img.width, img.height);
-
+  blendMode(DIFFERENCE);//BLEND
   flipStroke();
 
   rect(location.x, location.y, img.width, img.height);
-  image(baseLayer, mouseX, mouseY, width*.99, height*.99);
+  image(baseLayer, location.x, location.y, width*1.01, height*.99);
   blendMode(BLEND);//BLEND
-  //popMatrix();
+
+
+  popMatrix();
 }
 
 void flipStroke() {
