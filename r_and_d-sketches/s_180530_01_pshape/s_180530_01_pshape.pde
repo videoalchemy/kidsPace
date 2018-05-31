@@ -32,9 +32,9 @@ void setup () {
   //ps_1.shapeMode(CENTER);
   ps_1.setFill(color(255));
   ps_1.beginShape();
-  ps_1.vertex(10, 10);
+  ps_1.vertex(50, 10);
   ps_1.vertex(10, 200);
-  ps_1.vertex(110, 100);
+  ps_1.vertex(110, 200);
   ps_1.endShape(CLOSE);
 }
 
@@ -44,7 +44,7 @@ void draw() {
   //pushMatrix();
   //translate (width/2, height/2);
   //translate (mouseX, mouseY);
-  
+  pg_1.shapeMode(CENTER);
   pg_1.beginDraw();
   pg_1.pushMatrix();
   //pg_1.translate (-width/2, -height/2);
