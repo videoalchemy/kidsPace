@@ -17,7 +17,12 @@
  
  */
 
-boolean saveFrameIsOn = true;
+boolean saveFrameIsOn = false;
+
+String SNAP_FOLDER_PATH = "~/jaycody/kidsPace/snaps/";
+String project = "KidsPace";
+String version = "v0.2.0";
+
 
 PGraphics pg_1;
 PShape    ps_1;
@@ -68,6 +73,8 @@ void draw() {
   popMatrix();
 
   checkSaveFrame();
+  // checks for button press
+  updateControlsFromKeyboard();
 }
 
 

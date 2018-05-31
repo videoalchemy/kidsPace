@@ -1,4 +1,4 @@
-/*
+
 //////////////////////////////
 // KeyEVENTS - flipping switches!
 
@@ -9,84 +9,83 @@
 //////////////////////////////////////
 //  CREATE MOMENTARY SWITCH 
 // Current keyCode for the pressed key
-char currentKey;
+
+//   The system variable 'key' always contains the value 
+//     of the most recent key on the keyboard (either pressed or released). 
+
+//   For non-ASCII keys, use the 'keyCode' variable. 
+//      The keys included in the ASCII specification 
+//      (BACKSPACE, TAB, ENTER, RETURN, ESC, and DELETE) 
+//      do not require checking to see if the key is coded, 
+//      and you should simply use the 'key' variable instead of 'keyCode'
+
+char currentKey; 
 int currentKeyCode = -1;
+
 // Remember the current key when it goes down.
 void keyPressed() { 
   currentKeyCode = keyCode; 
   currentKey = key;
 
   if (key == CODED) {
-
     if (keyCode == LEFT) {
-      
-       for (int i = 0; i < chnl.length; i++) {
-           chnl[i].theta += .01;
-        }
+      println("keyCode == LEFT");
     } else if (keyCode == RIGHT) {
-         for (int i = 0; i < chnl.length; i++) {
-         chnl[i].theta -= .01;
-       }
+      println("keyCode == RIGHT");
     } else if (keyCode == UP) {
-         for (int i = 0; i < chnl.length; i++) {
-          chnl[i].growFactor += .03;
-          println(chnl[i].growFactor);
-      }
-
+      println("keyCoe == UP");
     } else if (keyCode == DOWN) {
-       for (int i = 0; i < chnl.length; i++) {
-        chnl[i].growFactor -= .03;
-        println(chnl[i].growFactor);
-      }
+      println("keyCoe == DOWN");
     }
+  }
 
 
 
-//DEBUG: println("keyCode = "+keyCode+ " key = "+key);
+  //DEBUG: println("keyCode = "+keyCode+ " key = "+key);
 
 
-  switch(currentKey){
-    case '-':
-      SHOW_MONITORS = !SHOW_MONITORS;
-      break;
-    case '1':
-      DISPLAY_CHANNEL = 1;
-      break;
-    case '2':
-      DISPLAY_CHANNEL = 2;
-      break;
-    case '3':
-      DISPLAY_CHANNEL = 3;
-      break;
-    case '4':
-      DISPLAY_CHANNEL = 4;
-      break;
-    case '5':
-      DISPLAY_CHANNEL = 5;
-      break;
-    case '6':
-      DISPLAY_CHANNEL = 6;
-      break;
-    case '7':
-      DISPLAY_CHANNEL = 7;
-      break;
-    case '8':
-      DISPLAY_CHANNEL = 8;
-      break;
-    case '9':
-      DISPLAY_CHANNEL = 9;
-      break;
-    case '0':
-      DISPLAY_CHANNEL = 0;
-      break;
+  switch(currentKey) {
+  case '-':
+    println("HYPEN!");
+    break;
+  case '1':
+    println("1");
+    break;
+  case '2':
+    println("2");
+    break;
+  case '3':
+    println("3");
+    break;
+  case '4':
+    println("4");
+    break;
+  case '5':
+    println("5");
+    break;
+  case '6':
+    println("6");
+    break;
+  case '7':
+    println("7");
+    break;
+  case '8':
+    println("8");
+    break;
+  case '9':
+    println("9");
+    break;
+  case '0':
+    println("10");
+    break;
   }
 }
-}
+
 
 // Clear the current key when it goes up.
 void keyReleased() {
-    currentKeyCode = -1;
-  }
+  currentKeyCode = -1;
+}
 //  END MOMENTARY SWITCH
 //////////////////////////////////////
 
@@ -114,6 +113,9 @@ void updateControlsFromKeyboard() {
   /////////////////////////////////////////////////
   if (currentKeyCode==TAB) {
     background(0);
+    pg_1.beginDraw();
+    pg_1.background(0);
+    pg_1.endDraw();
   } 
 
   /////////////////////////////////////////////////
@@ -121,41 +123,41 @@ void updateControlsFromKeyboard() {
   /////////////////////////////////////////////////
   //select source for chnl 1
   if (currentKey == 'q') {
-    chnl_1_journals.changeSourceImage("journals");
+    println(currentKey);
   } else if (currentKey == 'w') {
-    chnl_1_journals.changeSourceImage("emblems");
+    println(currentKey);
   }
   //select source for chnl 2
-   else if (currentKey == 'e') {
-    chnl_2_emblems.changeSourceImage("journals");
+  else if (currentKey == 'e') {
+    println(currentKey);
   } else if (currentKey == 'r') {
-    chnl_2_emblems.changeSourceImage("emblems");
+    println(currentKey);
   }
   //select source for chnl 3
   else if (currentKey == 't') {
-    chnl_3.changeSourceImage("journals");
+    println(currentKey);
   } else if (currentKey == 'y') {
-    chnl_3.changeSourceImage("emblems");
+    println(currentKey);
   }
   //select source for chnl 4
   else if (currentKey == 'u') {
-    chnl_4.changeSourceImage("journals");
+    println(currentKey);
   } else if (currentKey == 'i') {
-    chnl_4.changeSourceImage("emblems");
+    println(currentKey);
   }
   //select source for chnl 5
   else if (currentKey == 'o') {
-    chnl_5_kinect.changeSourceImage("journals");
+    println(currentKey);
   } else if (currentKey == 'p') {
-    chnl_5_kinect.changeSourceImage("emblems");
+    println(currentKey);
   }
   //select source for chnl 6
   else if (currentKey == '[') {
-    chnl_6_trackShape.changeSourceImage("journals");
+    println(currentKey);
   } else if (currentKey == ']') {
-    chnl_6_trackShape.changeSourceImage("emblems");
+    println(currentKey);
   }
-  
+
   //     END SELECT NEW SOURCE IMAGE
   ////////////////////////////////////////////////
 }
@@ -195,4 +197,3 @@ String saveScreen(String fileName) {
 }
 //   END SCREEN SNAPS
 ////////////////////////////////////////////////////////////
-*/
