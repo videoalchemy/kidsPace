@@ -17,6 +17,7 @@
  
  */
 
+boolean saveFrameIsOn = true;
 
 PGraphics pg_1;
 PShape    ps_1;
@@ -27,7 +28,7 @@ void setup () {
   imageMode(CENTER);
   pg_1 = createGraphics (width, height, P2D);
   ps_1 = createShape();
-  
+
   pg_1.imageMode(CENTER);
   //ps_1.shapeMode(CENTER);
   ps_1.setFill(color(255));
@@ -49,20 +50,35 @@ void draw() {
   pg_1.pushMatrix();
   //pg_1.translate (-width/2, -height/2);
   pg_1.translate(mouseX, mouseY);
-  
-  
+
+
   pg_1.shape(ps_1);
   pg_1.fill(127);
 
   pg_1.image(pg_1, 0, 0);
   pg_1.shape(ps_1);
-  
+
   pg_1.popMatrix();
   pg_1.endDraw();
-  
+
   pushMatrix();
   translate (width/2, height/2);
   image(pg_1, 0, 0);
-  
+
   popMatrix();
+
+  checkSaveFrame();
+}
+
+
+
+void checkSaveFrame() {
+  if (saveFrameIsOn) {
+    saveFrame("frames/####.tif");
+  }
+}
+
+
+void mousePressed() {
+  saveFrameIsOn = !saveFrameIsOn;
 }
