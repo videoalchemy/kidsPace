@@ -7,6 +7,8 @@ void printInstructions() {
     println("          -----------------------------------");
      println("   ENTER  takes a snapshot and saves it to "+SNAP_FOLDER_PATH);
      println("   TAB     clears background");
+     println("   'r'     toggle screen recording");
+     println("   'c'     toggle cursor");
      println("   'q'     grabs journal page for chnl_1");
      println("   'w'     grabs emblem for chnl_1");
      println("   'e'     grabs journal page for chnl_2");

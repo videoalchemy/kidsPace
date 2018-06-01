@@ -18,8 +18,11 @@
  */
 
 boolean saveFrameIsOn = false;
+boolean recording = false;
+boolean cursorIsOn = true;
 
 String SNAP_FOLDER_PATH = ("../../../snaps/");
+String FRAME_FOLDER_PATH = ("../../../frames/");
 String project = "KidsPace";
 String version = "prototype";
 
@@ -91,5 +94,5 @@ void checkSaveFrame() {
 
 
 void mousePressed() {
-  saveFrameIsOn = !saveFrameIsOn;
+  //saveFrameIsOn = !saveFrameIsOn;
 }
