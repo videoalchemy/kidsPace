@@ -192,7 +192,7 @@ void checkAndSetMouseLocation () {
 
 void checkSaveFrame() {
   if (saveFrameIsOn) {
-    saveFrame("frames/####.tif");
+    saveFrame("frames/#####.tif");
   }
 }
 void keyPressed() { //handle some user input

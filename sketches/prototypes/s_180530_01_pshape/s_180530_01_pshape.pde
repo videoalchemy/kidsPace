@@ -19,9 +19,9 @@
 
 boolean saveFrameIsOn = false;
 
-String SNAP_FOLDER_PATH = "~/jaycody/kidsPace/snaps/";
+String SNAP_FOLDER_PATH = ("../../../snaps/");
 String project = "KidsPace";
-String version = "v0.2.0";
+String version = "prototype";
 
 
 PGraphics pg_1;
@@ -42,7 +42,11 @@ void setup () {
   ps_1.vertex(10, 200);
   ps_1.vertex(110, 200);
   ps_1.endShape(CLOSE);
+  
+  printInstructions();
 }
+
+
 
 void draw() {
   background(0);
