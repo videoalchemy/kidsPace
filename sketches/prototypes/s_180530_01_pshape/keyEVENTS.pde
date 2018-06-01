@@ -21,27 +21,37 @@
 
 char currentKey; 
 int currentKeyCode = -1;
+boolean recording;
 
 // Remember the current key when it goes down.
 void keyPressed() { 
   currentKeyCode = keyCode; 
   currentKey = key;
 
+  //DEBUG: 
+  println("keyCode = "+keyCode+ " key = "+key);
+
+  // Handle CODED KEYS
   if (key == CODED) {
+    print("-->Translated: ");
     if (keyCode == LEFT) {
       println("keyCode == LEFT");
     } else if (keyCode == RIGHT) {
       println("keyCode == RIGHT");
     } else if (keyCode == UP) {
-      println("keyCoe == UP");
+      println("keyCode == UP");
     } else if (keyCode == DOWN) {
-      println("keyCoe == DOWN");
+      println("keyCode == DOWN");
     }
   }
 
-  //DEBUG: println("keyCode = "+keyCode+ " key = "+key);
-
+  // Handle standard keys as a switch
   switch(currentKey) {
+  case 'r':
+    println("TOGGLE RECORDING!");
+    recording = !recording;
+    println("*** Recording = " + recording + " ***");
+    break;
   case '-':
     println("HYPEN!");
     break;
@@ -83,7 +93,7 @@ void keyPressed() {
 void keyReleased() {
   currentKeyCode = -1;
 }
-//  END MOMENTARY SWITCH
+//  END MOMENTARY SWITCH  
 //////////////////////////////////////
 
 
@@ -118,6 +128,7 @@ void updateControlsFromKeyboard() {
   /////////////////////////////////////////////////
   //     SELECT NEW SOURCE IMAGES FOR CHANNELS 1-4
   /////////////////////////////////////////////////
+  //NOTE: THESE ARE NOT DEBOUNCED! Expect repeating keys here!!!
   //select source for chnl 1
   if (currentKey == 'q') {
     println(currentKey);
@@ -127,9 +138,8 @@ void updateControlsFromKeyboard() {
   //select source for chnl 2
   else if (currentKey == 'e') {
     println(currentKey);
-  } else if (currentKey == 'r') {
-    println(currentKey);
-  }
+  } 
+  
   //select source for chnl 3
   else if (currentKey == 't') {
     println(currentKey);
@@ -164,8 +174,10 @@ void updateControlsFromKeyboard() {
 
 ////////////////////////////////////////////////////
 //    SCREEN SNAPS
-// output: right now + project + version as a string
-// 2015-03-15_portal-control/portal-control_v0.5.3_01-42-50
+// filename pattern: version/project-date-time-millis-version.png
+// destination:      kidsPace/snaps --> symlinked to Dropbox/_SNAPS/201806-kidsPace/snaps
+// subdirectory:     in 'snap/' determined by global VERSION
+// example:          "prototype/KidsPace-20180601-132143-3770-prototype.png"
 String nowAsString() {
   return version+"/"+
     project+"-"+
