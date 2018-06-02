@@ -1,23 +1,3 @@
-////////////////////////////////////
-// UTILITY FUNCTIONS
-////////////////////////////////////
-
-
-//////////////////////////////////////////////////
-//  TOGGLE CURSOR  =  'c'
-void toggleCursor () {
-    cursorIsOn = !cursorIsOn;    
-    println("*** Cursor is " + cursorIsOn + " ***");
-    if (cursorIsOn) {
-      cursor();
-    } else {
-      noCursor();
-    }
-}
-//  END: TOGGLE CURSOR
-//////////////////////////////////////////////////
-
-
 ////////////////////////////////////////////////////
 //    SCREEN SNAPS
 // filename pattern: version/project-date-time-millis-version.png
@@ -46,12 +26,21 @@ String snapScreen() {
   return snapScreen(null);
 }
 String snapScreen(String fileName) {
-  println("who and when calls this");
   if (fileName == null) {
     fileName = nowAsString();
   }
-  save(SNAP_FOLDER_PATH + fileName);
-  println("SAVED AS "+fileName);
+  
+  // Turn off cursor before snap
+  // If toggle is on, then cursor should flip back at next animation cycle
+  if (cursorIsOn) {
+    toggleCursor();
+    save(SNAP_FOLDER_PATH + fileName);
+    println("SAVED AS "+fileName);
+    toggleCursor();
+  } else {
+    save(SNAP_FOLDER_PATH + fileName);
+    println("SAVED AS "+fileName);
+  } 
   return fileName;
 }
 //   END SCREEN SNAPS

@@ -36,16 +36,7 @@ void keyPressed() {
   //  SNAP SCREEN  =  ENTER
   //////////////////////////////////////////////////
   if (currentKeyCode==ENTER) {
-    // Turn off cursor if the cursor toggle switch is still on
-    //  If toggle is on, then cursor should flip back at next animation cycle
-    if (cursorIsOn) {
-      println("hits this cursor");
-      toggleCursor();
-      snapScreen();
-      toggleCursor();
-    } else {
-      snapScreen();
-    }
+    snapScreen();
   }
 
   /////////////////////////////////////////////////
@@ -75,15 +66,23 @@ void keyPressed() {
   // Handle standard keys as a switch
   switch(currentKey) {
   case 'r':
+    //////////////////////////////////////////////////
+    //  TOGGLE SCREEN RECORDING  =  'r'
+    directoryStartTime = frameAsString();
+    println ("directoryStartTime: " + directoryStartTime);
+    println ("FRAME NAME IS: " + frameAsString() + ".tif");
+    println ("recordFrame function returns string: " + recordFrame());
     println("TOGGLE RECORDING!");
-    recording = !recording;
-    println("*** Recording = " + recording + " ***");
+    recordIsOn = !recordIsOn;
+    println("*** Recording = " + recordIsOn + " ***");
     break;
+
   case 'c':
     //////////////////////////////////////////////////
     //  TOGGLE CURSOR  =  'c'
     toggleCursor();
     break;
+
   case '-':
     println("HYPEN!");
     break;
@@ -130,7 +129,7 @@ void keyReleased() {
 
 //////////////////////////////////////
 //  EXECUTE MOMENTARY SWITCHES
-// This function runs only if a key is pressssssed 
+// This function shuts down on key release and runs only if a key is pressssssed 
 void updateControlsFromKeyboard() {
   // if no key is currently down, make sure all of the buttons are up and bail  
   if (currentKeyCode == -1) {
@@ -184,46 +183,3 @@ void updateControlsFromKeyboard() {
 }
 //  END KEYCODE FOR EVENTS
 /////////////////////////////////////////////////////////////
-
-/*
-////////////////////////////////////////////////////
- //    RECORD SCREEN as FRAMES
- // filename pattern: version/project-date-time-millis-version.png
- // destination:      kidsPace/frames --> symlinked to Dropbox/_SNAPS/201806-kidsPace/frames
- // symlink command:  in kidsPace repo root:
- //       ln -s /Users/jstephens/Dropbox/_SNAPS/201806-kidsPace/frames ./frames
- // subdirectory:     in 'frames/<version>' determined by global VERSION
- // example:          "prototype/KidsPace-20180601-132143-3770-prototype.png"
- 
- String frameAsString() {
- return version+"/"+
- nf(year(), 4)+
- nf(month(), 2)+
- nf(day(), 2)+"-"+
- nf(hour(), 2)+"/"+
- nf(year(), 4)+
- nf(month(), 2)+
- nf(day(), 2)+"-"+
- nf(hour(), 2)+"/"+
- nf(minute(), 2)+
- nf(second(), 2)+"-"+
- version;
- }
- // Record the current frame as a .tif in the FRAME_FOLDER_PATH,
- // If you pass a filename, we'll use that, otherwise we'll default to the current date.
- // NOTE: do NOT pass the ".jpg" or the path.
- // Returns the name of the file saved.
- String saveScreen() {
- return saveScreen(null);
- }
- String saveScreen(String frameName) {
- if (frameName == null) {
- frameName = frameAsString();
- }
- saveFrame(FRAMES_FOLDER_PATH + frameName + ".png");
- println("SAVED AS "+frameName);
- return frameName;
- }
- //   END: RECORD SCREEN as FRAMES
- ////////////////////////////////////////////////////////////
- */

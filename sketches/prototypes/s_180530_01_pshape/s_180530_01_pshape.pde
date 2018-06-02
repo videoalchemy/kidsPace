@@ -18,11 +18,12 @@
  */
 
 boolean saveFrameIsOn = false;
-boolean recording = false;
+boolean recordIsOn = false;
 boolean cursorIsOn = true;
 
 String SNAP_FOLDER_PATH = ("../../../snaps/");
 String FRAME_FOLDER_PATH = ("../../../frames/");
+String directoryStartTime = (""); //timestamp to be called only once
 String project = "KidsPace";
 String version = "prototype";
 
@@ -79,16 +80,19 @@ void draw() {
 
   popMatrix();
 
-  checkSaveFrame();
+  checkRecordFrame();
+  
   // checks for button press
   updateControlsFromKeyboard();
 }
 
 
 
-void checkSaveFrame() {
-  if (saveFrameIsOn) {
-    saveFrame("frames/####.tif");
+void checkRecordFrame() {
+  if (recordIsOn) {
+    //println("recording would be on: " + recordFrame());
+    saveFrame(FRAME_FOLDER_PATH + directoryStartTime + "#####.tif");
+    //saveFrame("frames/####.tif");
   }
 }
 

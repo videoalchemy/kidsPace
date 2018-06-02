@@ -1,0 +1,18 @@
+////////////////////////////////////
+// UTILITY FUNCTIONS
+////////////////////////////////////
+
+
+//////////////////////////////////////////////////
+//  TOGGLE CURSOR  =  'c'
+void toggleCursor () {
+    cursorIsOn = !cursorIsOn;    
+    println("*** Cursor is " + cursorIsOn + " ***");
+    if (cursorIsOn) {
+      cursor();
+    } else {
+      noCursor();
+    }
+}
+//  END: TOGGLE CURSOR
+//////////////////////////////////////////////////
