@@ -2,7 +2,6 @@
 // UTILITY FUNCTIONS
 ////////////////////////////////////
 
-
 //////////////////////////////////////////////////
 //  TOGGLE CURSOR  =  'c'
 void toggleCursor () {
@@ -17,7 +16,6 @@ void toggleCursor () {
 //  END: TOGGLE CURSOR
 //////////////////////////////////////////////////
 
-
 //////////////////////////////////////////////////
 //  TOGGLE RECORDING  =  'r'
 void toggleRecording () {
@@ -29,3 +27,29 @@ void toggleRecording () {
 }
 //  END: TOGGLE RECORDING
 //////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+//  RECORD FRAMES  =  'r'
+void checkRecordFrame() {
+  if (recordIsOn) {
+    saveFrame(FRAME_FOLDER_PATH + directoryStartTime + "#####.tif");
+  }
+}
+//  END: RECORD FRAMES
+//////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+//  MAKE PIXELS CLEAR FOR PGRAPHIC  =  'TAB'
+void makePixelsClearAgain() {
+    //background(0);
+    pg_1.beginDraw();
+    pg_1.clear();
+    pg_1.endDraw();
+}
+//  END: MAKE PIXELS CLEAR
+//////////////////////////////////////////////////
+
+
+void mousePressed() {
+  //saveFrameIsOn = !saveFrameIsOn;
+}

@@ -1,7 +1,5 @@
-
 //////////////////////////////
 // KeyEVENTS - flipping switches!
-
 
 ////////////////////////////////////////////////////
 //  KEYCODE FOR EVENTS
@@ -34,7 +32,7 @@ void keyPressed() {
 
   //////////////////////////////////////////////////
   //  SNAP SCREEN  =  ENTER
-  //////////////////////////////////////////////////
+  /////////////////////////////////////////////////
   if (currentKeyCode==ENTER) {
     snapScreen();
   }
@@ -43,10 +41,7 @@ void keyPressed() {
   //  CLEAR BACKGROUND = TAB 
   /////////////////////////////////////////////////
   if (currentKeyCode==TAB) {
-    background(0);
-    pg_1.beginDraw();
-    pg_1.background(0);
-    pg_1.endDraw();
+    makePixelsClearAgain();
   } 
 
   // Handle CODED KEYS
