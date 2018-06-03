@@ -81,17 +81,19 @@ void drawFeedbackLayer() {
   //image(baseLayer, mouse.y-(1/(mouse.y+1)), mouse.x, width*(1.05), height-50);
   //blendMode(DIFFERENCE);//BLEND
   //image(baseLayer, mouseY-(1/(mouseY+1)), -mouseX, -width*1.1, height*1.1);
-  blendMode(DIFFERENCE);//BLEND
+  blendMode(BLEND);//BLEND
   //image(baseLayer, width-mouseX-(1/(mouseY+1)), height-mouseY, width*(.8), height*(.9));
   //image(img, location.x, location.y, img.width*(1+wAdjust)-50, img.height*(1+hAdjust)-50);
   image(img, location.x, location.y, img.width+5, img.height+5);
   
+  /*
   pushMatrix();
   scale(-1,-1);
-  scale(2);
+  scale(1.1);
   //rotate(.1);
-  //image(img, location.x, location.y, img.width+5, img.height+5);
+  image(img, location.x, location.y, img.width+5, img.height+5);
   popMatrix();
+  */
   
   flipStroke();
   
@@ -100,11 +102,22 @@ void drawFeedbackLayer() {
   ellipse(random(0,width), height*.5, 40,40);
   fill(0,100,0,2);
   rect(location.x, location.y, img.width, img.height);
-  //image(baseLayer, mouseX, mouseY, width*.9, height*.9);
+  image(baseLayer, mouseX, mouseY, width*.9, height*.9);
   blendMode(BLEND);//BLEND
   fill(0,255,0,100);
   ellipse(mouseX+random(0,300), height*.2, 60,60);
   //popMatrix();
+  
+  
+   
+  pushMatrix();
+  translate(width, height);
+  scale(-1,-1);
+  scale(1.1);
+  //rotate(.1);
+  image(img, location.x, location.y, img.width+5, img.height+5);
+  popMatrix();
+  
 }
 
 void flipStroke() {

@@ -100,7 +100,7 @@ void drawFeedbackLayer() {
   ellipse(random(0,width), height*.5, 40,40);
   fill(0,100,0,2);
   rect(location.x, location.y, img.width, img.height);
-  //image(baseLayer, mouseX, mouseY, width*.9, height*.9);
+  image(baseLayer, mouseX, mouseY, width*.9, height*.9);
   blendMode(BLEND);//BLEND
   fill(0,255,0,100);
   ellipse(mouseX+random(0,300), height*.2, 60,60);

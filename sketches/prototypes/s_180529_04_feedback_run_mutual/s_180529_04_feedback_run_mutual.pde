@@ -49,7 +49,8 @@ void draw() {
   checkAndSetMouseLocation(); 
 
   drawFeedbackLayer();
-
+  filter(THRESHOLD);
+  filter(INVERT);
 
   drawTwirlingBaton();
   drawUpDownOscillator();
@@ -71,12 +72,12 @@ void drawFeedbackLayer() {
   updatePixels();
   baseLayer.updatePixels();
   imageMode(CENTER);
-  //blendMode(BLEND);//BLEND
+  blendMode(BLEND);//BLEND
 
   //image(baseLayer, location.y-(1/(location.y+1)), location.x, width*1.1, height);
   //image(baseLayer, mouse.y-(1/(mouse.y+1)), mouse.x, width*1.1, height);
   pushMatrix();
-  
+
   //translate(0, 0);
   translate(mouseX, mouseY);
 
