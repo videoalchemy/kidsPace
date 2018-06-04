@@ -92,7 +92,7 @@ void draw() {
   pg_1.image(pg_1, 0, 0, width*1.2, height*1.2);
   pg_1.shape(ps_1, 0, 0);
   popMatrix();
-  //pg_1.image(pg_1, 0, 0, width*1.2, height*1.2);
+  pg_1.image(pg_1, 0, 0, width*1.2, height*1.2);
 
   //pg_1.shape(ps_1, 0, 0);//random(-3, 3), random(-3, 3));
   //pg_1.shape(ps_1,0,0);
