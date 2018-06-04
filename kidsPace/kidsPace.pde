@@ -49,8 +49,12 @@ void setup () {
 
   ps_1 = createShape();
   //ps_1.shapeMode(CENTER);
-  //ps_1.setFill(color(255));
+  //ps_1.setFill(color(255,0,0));
   ps_1.beginShape();
+  //ps_1.tint(255,0,0,10);
+  //ps_1.texture(pg_1);
+  ps_1.stroke(0);
+  ps_1.strokeWeight(1);
   ps_1.vertex(50, 10);
   ps_1.vertex(10, 200);
   ps_1.vertex(110, 200);
@@ -61,10 +65,10 @@ void setup () {
 }
 
 void draw() {
-  //  background(0); //colors the main graphics context
-  
+  // background(0); //colors the main graphics context
+
   ps_1.setFill(color(0,255,0));
- 
+
   pg_1.beginDraw();
   pg_1.clear();
   //pg_1.tint(255, 0, 0);
@@ -74,16 +78,22 @@ void draw() {
   pg_1.translate(mouseX, mouseY);
 
   pg_1.image(pg_1, 0, 0);
-  pg_1.shape(ps_1, 0,0);//random(-3, 3), random(-3, 3));
-  //pg_1.image(pg_1, -20, -20, width*1.9, height*1.9);
+  //pg_1.shape(ps_1, 0,0);//random(-3, 3), random(-3, 3));
+  pg_1.image(pg_1, -20, -20, width*2.8, height*2.8);
+  //pg_1.image(pg_1, 0, 0);
   pushMatrix();
-    pg_1.scale(1.5);
-    pg_1.rotate(millis()*.0001);
-    pg_1.shape(ps_1, 20, 20);
-    pg_1.image(pg_1, 0,0,width*1.2, height*1.2); 
-  popMatrix();
-  pg_1.image(pg_1, 0,0,width*1.2, height*1.2);
   
+  //pg_1.shape(ps_1, 20, 20);
+  //pg_1.image(pg_1, 0, 0);
+  pg_1.scale(1.2);
+  //pg_1.shape(ps_1, 20, 20);
+  pg_1.rotate(millis()*.0001);
+  pg_1.shape(ps_1, -20, -20);
+  pg_1.image(pg_1, 0, 0, width*1.2, height*1.2);
+  pg_1.shape(ps_1, 0, 0);
+  popMatrix();
+  //pg_1.image(pg_1, 0, 0, width*1.2, height*1.2);
+
   //pg_1.shape(ps_1, 0, 0);//random(-3, 3), random(-3, 3));
   //pg_1.shape(ps_1,0,0);
 
@@ -92,7 +102,8 @@ void draw() {
 
 
   pushMatrix();
-  translate (width/2, height/2);
+  //translate (width/2, height/2);
+  translate (mouseX, mouseY);
   image(pg_1, 0, 0);
   popMatrix();
 
