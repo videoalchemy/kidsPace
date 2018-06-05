@@ -33,7 +33,8 @@ PGraphics bg;
 PShape    ps_1;
 
 void setup () {
-  size(640, 480, P2D); 
+  //size(640, 480, P2D); 
+  size(1024,768, P2D); 
   background(0); //colors the main graphics context
   smooth();
   shapeMode(CENTER);

@@ -67,11 +67,9 @@ class Kinecter {
         // set transparency here
         depthImg.pixels[i] = color(0);  // tint(255,0); ???
         pg.pixels[i] = color(0);
-        
       } else if (depth > maxDepth) {
         depthImg.pixels[i] = color(0);  // tint(255,0); ???
         pg.pixels[i] = color(0);
-        
       } else {
         // set alpha here as a map of distance as well.
         int greyScale = (int)map((float)depth, minDepth, maxDepth, 255, 10);
@@ -86,9 +84,49 @@ class Kinecter {
       //image(pg, width, height);
     }
     depthImg.updatePixels();
+    //pg.blendMode(BLEND);
+    //pg.image(pg,100,100);
     pg.updatePixels();
-    pg.endDraw();
-    //return depthImg;
     return pg;
+    //return depthImg;
+  }
+
+  void createRawDepthImage() {
+    depthImg.loadPixels();
+    pg.beginDraw();
+    //pg.clear();
+    pg.loadPixels();
+    int [] rawDepth = kinect.getRawDepth();
+    for (int i=0; i < rawDepth.length; i++) {
+      int depth = rawDepth[i];
+
+      // if closer to sensor than min, then transparent
+      if (depth < minDepth) {
+        // set transparency here
+        depthImg.pixels[i] = color(0);  // tint(255,0); ???
+        pg.pixels[i] = color(0);
+      } else if (depth > maxDepth) {
+        depthImg.pixels[i] = color(0);  // tint(255,0); ???
+        pg.pixels[i] = color(0);
+      } else {
+        // set alpha here as a map of distance as well.
+        int greyScale = (int)map((float)depth, minDepth, maxDepth, 255, 10);
+        //int greyScale = 255;
+        depthImg.pixels[i] = color(greyScale);
+        pg.pixels[i] = color(greyScale);
+      }
+
+      //depthImg.updatePixels();
+      //pg.image(pg, 0, 0);
+      //pg.updatePixels();
+      //image(pg, width, height);
+    }
+    depthImg.updatePixels();
+    //pg.blendMode(BLEND);
+    //pg.image(pg,100,100);
+    pg.endDraw();
+    pg.updatePixels();
+    //image(depthImg, width, height);
+    //return depthImg;
   }
 }
