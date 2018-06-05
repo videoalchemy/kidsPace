@@ -14,7 +14,7 @@
  */
 
 Particle p;
-boolean saveFrameIsOn = true;
+boolean saveFrameIsOn = false;
 boolean mouseIsEngaged = false;
 PImage baseLayer;
 PVector location;
