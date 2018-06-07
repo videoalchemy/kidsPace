@@ -27,6 +27,8 @@ boolean cursorIsOn = true;
 void setup() {
   //size(1280, 480, P2D);
   size(1024, 768, P3D);
+  smooth();
+  rectMode(CENTER);
 
   kinect = new Kinecter(this);
   recorder = new Recorder();
@@ -34,7 +36,9 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  //background(0);
+  //filter(INVERT);
+  //filter(THRESHOLD);
   // Start/stop recording frames if 'r'
   recorder.ready();
   // Check for button presses

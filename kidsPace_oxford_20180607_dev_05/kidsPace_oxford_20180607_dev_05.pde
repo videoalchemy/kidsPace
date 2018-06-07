@@ -22,11 +22,17 @@ Recorder recorder;
 
 boolean cursorIsOn = true;
 
-
+PImage fd;
+PGraphics pg;
 
 void setup() {
   //size(1280, 480, P2D);
   size(1024, 768, P3D);
+  smooth();
+  rectMode(CENTER);
+  
+  fd = createImage(width,height,ARGB);
+  pg = createGraphics(width, height);
 
   kinect = new Kinecter(this);
   recorder = new Recorder();
@@ -34,7 +40,13 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  //background(0);
+  //filter(INVERT);
+  //filter(THRESHOLD);
+  
+  //image(pg,0,0,100,100);
+  
+  
   // Start/stop recording frames if 'r'
   recorder.ready();
   // Check for button presses
@@ -58,4 +70,5 @@ void draw() {
   //Draw the 3DGrid
   kinect.draw3DGrid();
   //kinect.drawRectShapeGrid();
+  
 }

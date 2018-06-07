@@ -99,24 +99,25 @@ class Kinecter {
   }
 
   void draw3DGrid() {
-    int skip = 15;
+    int skip = 10;
     cell3DGrid.loadPixels();
     int [] rawDepth = kinect.getRawDepth();
     for (int x = 0; x < cell3DGrid.width; x+=skip) {
       for (int y = 0; y < cell3DGrid.height; y+=skip) {
         int index = x + y * cell3DGrid.width;
         int depth = rawDepth[index];
-        float zScale = map(mouseX, 0, width, 900, -900);
-        float zScalePos = map(mouseY, 0, height, -900, 900);
+        float zScale = map(mouseX, 0, width, 2500, -2500);
+        float zScalePos = map(mouseY, 0, height, -2500, 2500);
         float greyScale = map((float)depth, minDepth, maxDepth, 255, 0);
         float z = map((float)depth, minDepth, maxDepth, zScalePos, zScale);
         float rot = map((float)depth, minDepth, maxDepth, -2, 2);
         //float z = map((float)depth, minDepth, maxDepth, 500,-500);//original
-        fill(0, greyScale, greyScale);
+        fill(greyScale, 255-greyScale, greyScale);
         //noStroke();
         pushMatrix();
         translate(x*vidScale, y*vidScale, z);
-        //rotate(rot);
+        rotate(rot);
+        rotateZ(rot);
 
         rect(0, 0, skip*vidScale, skip*vidScale);
         //rect(0, 0, skip, skip);
