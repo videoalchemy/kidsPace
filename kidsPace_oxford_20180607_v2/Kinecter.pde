@@ -2,14 +2,16 @@ class Kinecter {
   Kinect kinect;
   boolean isKinected = false;
 
-  int minDepth = 840; //530: home testing, 60:standard
-  int maxDepth = 977; // 920: home testing: 2000: stand
+  int minDepth = 530; //530: home testing, 60:standard
+  int maxDepth = 1200; // 920: home testing: 2000: stand
 
   float angle;
+  float vidScale = 1.6; //scale up the kinect image this much to match the output
 
   int thresholdRange = 2047;
   PImage depthImg;
   PImage lowResDepthImg;
+  PImage cell3DGrid;
 
   public Kinecter(PApplet parent) {
     try {
@@ -31,6 +33,7 @@ class Kinecter {
     // blank image
     depthImg = new PImage(kinect.width, kinect.height);
     lowResDepthImg = new PImage(kinect.width, kinect.height);
+    cell3DGrid = new PImage(kinect.width, kinect.height);
   }
 
   void drawDepthImage() {
@@ -67,33 +70,52 @@ class Kinecter {
       }
     }
     depthImg.updatePixels();
-    //image(depthImg, kinect.width, 0);
     return depthImg;
   }
 
-  void createLowResDepthImage() {
-    int skip = 5;
+  PImage getLowResDepthImage() {
+    int skip = 20;
     lowResDepthImg.loadPixels();
     int [] rawDepth = kinect.getRawDepth();
-    for (int x = 0; x < lowResDepthImg.width; x++) {
-      for (int y = 0; y < lowResDepthImg.height; y++) {
+    for (int x = 0; x < lowResDepthImg.width; x+=skip) {
+      for (int y = 0; y < lowResDepthImg.height; y+=skip) {
         int index = x + y * lowResDepthImg.width;
         int depth = rawDepth[index];
         // if closer to sensor than min, then transparent
-        if (depth < minDepth) {
-          // set transparency here
-          lowResDepthImg.pixels[index] = color(0);  // tint(255,0); ???
-        } else if (depth > maxDepth) {
-          lowResDepthImg.pixels[index] = color(0);  // tint(255,0); ???
-        } else {
-          // set alpha here as a map of distance as well.
-          int greyScale = (int)map((float)depth, minDepth, maxDepth, 255, 10);
-          //int greyScale = 255;
-          lowResDepthImg.pixels[index] = color(greyScale);
-        }
+        float greyScale = map((float)depth, minDepth, maxDepth, 255, 0);
+        fill(greyScale);
+        rect(x*vidScale, y*vidScale, skip*vidScale, skip*vidScale);
+        //rect(x, y, skip, skip);
+        //lowResDepthImg.pixels[index] = color(greyScale);
       }
     }
     lowResDepthImg.updatePixels();
-    image(lowResDepthImg, 0, 0, width, height);
+    //image(lowResDepthImg, 0, 0, width, height);
+    return lowResDepthImg;
+  }
+
+  void draw3DGrid() {
+    int skip = 20;
+    cell3DGrid.loadPixels();
+    int [] rawDepth = kinect.getRawDepth();
+    for (int x = 0; x < cell3DGrid.width; x+=skip) {
+      for (int y = 0; y < cell3DGrid.height; y+=skip) {
+        int index = x + y * cell3DGrid.width;
+        int depth = rawDepth[index];
+        
+        float greyScale = map((float)depth, minDepth, maxDepth, 255, 0);
+        float z = greyScale;
+        fill(greyScale);
+        pushMatrix();
+        translate(x*vidScale, y*vidScale, z);
+        
+        rect(0, 0, skip*vidScale, skip*vidScale);
+        popMatrix();
+      }
+    }
+    cell3DGrid.updatePixels();
+    //image(3DGrid, 0, 0, width, height);
+    
+    //return 3DGrid;
   }
 }

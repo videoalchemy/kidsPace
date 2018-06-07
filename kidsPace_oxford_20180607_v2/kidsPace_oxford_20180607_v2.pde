@@ -38,6 +38,9 @@ void draw() {
   recorder.ready();
   // Check for button presses
   updateControlsFromKeyboard();
+  
+   // Show the calibration info (angle and distance)
+  //kinect.displayDistanceAndAngle();
 
   
   // Kinect
@@ -47,8 +50,12 @@ void draw() {
   // Draw the greyscale image that's based on the depthArray
   //image(kinect.getRawDepthImage(), 0, 0, width, height);
   
-  // Show the calibration info (angle and distance)
-  //kinect.displayDistanceAndAngle();
   
-  kinect.createLowResDepthImage();    
+  //PImage lowResImg = kinect.getLowResDepthImage();
+  //image(lowResImg,0,0,width, height);
+  
+  //Draw the 3DGrid
+  kinect.draw3DGrid();
+  
+  
 }
