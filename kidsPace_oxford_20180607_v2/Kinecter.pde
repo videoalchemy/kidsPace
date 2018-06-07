@@ -7,11 +7,13 @@ class Kinecter {
 
   float angle;
   float vidScale = 1.6; //scale up the kinect image this much to match the output
-
+  int skip = 20;
   int thresholdRange = 2047;
   PImage depthImg;
   PImage lowResDepthImg;
   PImage cell3DGrid;
+  PShape rectShape;
+  PShape s;
 
   public Kinecter(PApplet parent) {
     try {
@@ -34,6 +36,8 @@ class Kinecter {
     depthImg = new PImage(kinect.width, kinect.height);
     lowResDepthImg = new PImage(kinect.width, kinect.height);
     cell3DGrid = new PImage(kinect.width, kinect.height);
+    rectShape = createShape(RECT, 0, 0, skip*vidScale, skip*vidScale);
+    s = createShape();
   }
 
   void drawDepthImage() {
@@ -95,27 +99,73 @@ class Kinecter {
   }
 
   void draw3DGrid() {
-    int skip = 20;
+    int skip = 15;
     cell3DGrid.loadPixels();
     int [] rawDepth = kinect.getRawDepth();
     for (int x = 0; x < cell3DGrid.width; x+=skip) {
       for (int y = 0; y < cell3DGrid.height; y+=skip) {
         int index = x + y * cell3DGrid.width;
         int depth = rawDepth[index];
-        
+
         float greyScale = map((float)depth, minDepth, maxDepth, 255, 0);
-        float z = greyScale;
-        fill(greyScale);
+        float z = map((float)depth, minDepth, maxDepth, 550, -550);
+        fill(0, greyScale, 0);
         pushMatrix();
         translate(x*vidScale, y*vidScale, z);
-        
+
         rect(0, 0, skip*vidScale, skip*vidScale);
+        //rect(0, 0, skip, skip);
         popMatrix();
       }
     }
     cell3DGrid.updatePixels();
     //image(3DGrid, 0, 0, width, height);
+
+    //return 3DGrid;
+  }
+
+  void drawRectShapeGrid() {
+     
+        s.beginShape();
+        //s.fill(0, 0, greyScale);
+        //s.noStroke();
+        s.texture(getLowResDepthImage());
+        s.vertex(0, 0);
+        s.vertex(0, skip*vidScale);
+        s.vertex(skip*vidScale, skip*vidScale);
+        s.vertex(skip*vidScale, 0);
+        s.endShape(CLOSE);
     
+    int skip = 15;
+    cell3DGrid.loadPixels();
+    int [] rawDepth = kinect.getRawDepth();
+    
+    for (int x = 0; x < cell3DGrid.width; x+=skip) {
+      for (int y = 0; y < cell3DGrid.height; y+=skip) {
+
+        int index = x + y * cell3DGrid.width;
+        int depth = rawDepth[index];
+
+        float greyScale = map((float)depth, minDepth, maxDepth, 255, 0);
+        float z = map((float)depth, minDepth, maxDepth, 550, -550);
+        fill(0, greyScale, 0);
+
+
+        pushMatrix();
+        translate(x*vidScale, y*vidScale, z);
+
+       
+
+        shape(s, 0,0);
+        //rect(0, 0, skip*vidScale, skip*vidScale);
+        //rect(0, 0, skip, skip);
+        popMatrix();
+      }
+    }
+    //rectShape.endDraw();
+    cell3DGrid.updatePixels();
+    //image(3DGrid, 0, 0, width, height);
+
     //return 3DGrid;
   }
 }

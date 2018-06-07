@@ -34,28 +34,28 @@ void setup() {
 }
 
 void draw() {
+  background(0);
   // Start/stop recording frames if 'r'
   recorder.ready();
   // Check for button presses
   updateControlsFromKeyboard();
-  
-   // Show the calibration info (angle and distance)
+
+  // Show the calibration info (angle and distance)
   //kinect.displayDistanceAndAngle();
 
-  
+
   // Kinect
   // Draw the Generic depth image
   //kinect.drawDepthImage(); 
 
   // Draw the greyscale image that's based on the depthArray
   //image(kinect.getRawDepthImage(), 0, 0, width, height);
-  
-  
+
+
   //PImage lowResImg = kinect.getLowResDepthImage();
   //image(lowResImg,0,0,width, height);
-  
+
   //Draw the 3DGrid
   kinect.draw3DGrid();
-  
-  
+  //kinect.drawRectShapeGrid();
 }
