@@ -46,11 +46,6 @@ void draw() {
   
   //image(pg,0,0,100,100);
   
-  
-  // Start/stop recording frames if 'r'
-  recorder.ready();
-  // Check for button presses
-  updateControlsFromKeyboard();
 
   // Show the calibration info (angle and distance)
   //kinect.displayDistanceAndAngle();
@@ -71,4 +66,12 @@ void draw() {
   kinect.draw3DGrid();
   //kinect.drawRectShapeGrid();
   
+  
+  // Check for button presses
+  updateControlsFromKeyboard();
+  
+  /////////////////////////////////////////////////
+  /////// ALWAYS RECORD AT THE END
+  // Start/stop recording frames if 'r'
+  recorder.ready();
 }
