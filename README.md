@@ -2,6 +2,9 @@
 > A play-space of responsive video projections. You know, for kids!
 __________________________
 
+### Vids and Picts:
+- [FlowField prototypes][1]
+
 ### dev tasks
 - [ ] install oF
 - [ ] couple oF tutorials 
@@ -136,3 +139,6 @@ ____________________________
 [using the project generator]:https://github.com/openframeworks/openFrameworks/blob/master/docs/projectgenerator.md
 [using oF in Xcode]:https://github.com/openframeworks/openFrameworks/blob/master/docs/osx.md
 [oF libraries]:https://github.com/openframeworks/openFrameworks/blob/master/docs/libraries.md
+
+
+[1]:https://photos.app.goo.gl/xWP9hfG53KWtKws48
