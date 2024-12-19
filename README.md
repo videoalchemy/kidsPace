@@ -1,5 +1,6 @@
 ## KidsPace
 > A play-space of responsive video projections. You know, for kids!
+> Built for Oxford Elementary School, 2016
 __________________________
 
 ### Vids and Picts:
